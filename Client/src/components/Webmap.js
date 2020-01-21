@@ -1,21 +1,48 @@
 import React from "react";
-import { Map, TileLayer } from "react-leaflet";
-import "./app.css";
-import { Map, TileLayer } from "react-leaflet";
-// import L from "leaflet";
-import 'leaflet/dist/leaflet.css';
+import { Map, TileLayer, FeatureGroup, withLeaflet } from "react-leaflet";
+import { SearchControl, OpenStreetMapProvider } from "react-leaflet-geosearch";
+import { EditControl } from "react-leaflet-draw";
 
+export default function Webmap() {
+  const prov = OpenStreetMapProvider();
+  const GeoSearchControlElement = withLeaflet(SearchControl);
+  const drawing = FeatureGroup();
 
-
-
-
-export default function App() {
   return (
-    <Map center={[45.4, -75.7]} zoom={12}>
+    <Map center={[15.4, -101.7]} zoom={2.5}>
+      >
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}"
+        attribution='Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.'
+        time=""
+        tilematrixset="GoogleMapsCompatible_Level"
+        minZoom="2"
+        maxZoom="8"
+        format="jpg"
       />
+      <GeoSearchControlElement
+        provider={prov}
+        showMarker={true}
+        showPopup={false}
+        popupFormat={({ query, result }) => result.label}
+        maxMarkers={3}
+        retainZoomLevel={false}
+        animateZoom={true}
+        autoClose={false}
+        searchLabel={"Enter address, please"}
+        keepResult={true}
+      />
+      <FeatureGroup>
+        <EditControl
+          position="topright"
+          onEdited={this._onEditPath}
+          onCreated={this._onCreate}
+          onDeleted={this._onDeleted}
+          draw={{
+            rectangle: false
+          }}
+        />
+      </FeatureGroup>
     </Map>
   );
 }

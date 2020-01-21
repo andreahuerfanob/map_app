@@ -1,22 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
-import { Map, TileLayer } from "react-leaflet";
-import L from "leaflet";
-
-import Basemap from "./components/Basemap";
-
-
-// 20.49 on to make map 
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+// import { Map, TileLayer } from "react-leaflet";
+// import L from "leaflet";
+import Webmap from "./components/Webmap";
+import Geosearch from "./components/Geosearch";
+// 20.49 on to make map
 function App() {
   return (
     <Router>
-      <switch>
-      <Route exact path="/">
-        <Basemap/>
+      <Switch>
+        <Route exact path="/">
+          <Webmap />
         </Route>
-        </switch>
-        </Router>
+      </Switch>
+    </Router>
   );
 }
 
