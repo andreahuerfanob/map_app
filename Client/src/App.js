@@ -4,7 +4,7 @@ import "./App.css";
 // import { Map, TileLayer } from "react-leaflet";
 // import L from "leaflet";
 import Webmap from "./components/Webmap";
-import Geosearch from "./components/Geosearch";
+//import Geosearch from "./components/Geosearch";
 // 20.49 on to make map
 function App() {
   return (
