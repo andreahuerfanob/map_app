@@ -1,3 +1,9 @@
+## Libraries used to make App: 
+1. react
+2. react-leaflet,
+3. react-leaflet-geosearch
+4. react-leaflet-draw"
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +72,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+//he app must provide a simple, intuitive and smooth user experience.-Include a README file that specifies how to configureandrun your app.-You can useonline Git service (e.g. GitHub or Bitbucket)to share your code with us or send us a zipped repository. It may be a public or private repository, just make sure we can access it by the deadline.-We encourage you to develop the project using Git and show your approach to version control in the history of the repository.Rules-The app must be compatible withmodern browsers.-You may use third-partylibraries, APIsand code fragments(citeanything you use).-You must justify your decisions, assumptions and usage of third-party services or code.-Comment your co
